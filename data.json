@@ -1,0 +1,124 @@
+{
+  "scripts": [
+    {
+      "id": "script1",
+      "name": "Script 1",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "CONTENU DU SCRIPT 1",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script2",
+      "name": "Script 2",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "CONTENU DU SCRIPT 2",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script3",
+      "name": "Script 3",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "CONTENU DU SCRIPT 3",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script4",
+      "name": "Script 4",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "CONTENU DU SCRIPT 4",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script5",
+      "name": "Script 5",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "CONTENU DU SCRIPT 5",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script6",
+      "name": "Script 6",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "CONTENU DU SCRIPT 6",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script7",
+      "name": "Script 7",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "CONTENU DU SCRIPT 7",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script8",
+      "name": "Script 8",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "CONTENU DU SCRIPT 8",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script9",
+      "name": "Script 9",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "CONTENU DU SCRIPT 9",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script10",
+      "name": "Script 10",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "CONTENU DU SCRIPT 10",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script11",
+      "name": "Script 11",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "CONTENU DU SCRIPT 11",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script12",
+      "name": "Script 12",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "CONTENU DU SCRIPT 12",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script13",
+      "name": "Script 13",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "CONTENU DU SCRIPT 13",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script14",
+      "name": "Script 14",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "CONTENU DU SCRIPT 14",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script15",
+      "name": "Script 15",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "CONTENU DU SCRIPT 15",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    }
+  ]
+}
