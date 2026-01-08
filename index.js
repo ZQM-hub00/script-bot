@@ -192,30 +192,35 @@ client.on("interactionCreate", async interaction => {
     }
 
     // Comportement par défaut : Activation
-    const member = await guild.members.fetch(interaction.user.id);
-    if (!script.whitelist.includes(interaction.user.id)) {
-      logAction(interaction.user.id, script.name, "❌ Refus");
-      guild.channels.cache.get(DENY_CHANNEL)?.send(`❌ <@${interaction.user.id}> Vous n'êtes pas dans la whitelist !`);
-      return interaction.reply({ content: "❌ Vous n'êtes pas dans la whitelist.", ephemeral: true });
+    try {
+      const member = await guild.members.fetch(interaction.user.id);
+      if (!script.whitelist.includes(interaction.user.id)) {
+        logAction(interaction.user.id, script.name, "❌ Refus");
+        guild.channels.cache.get(DENY_CHANNEL)?.send(`❌ <@${interaction.user.id}> Vous n'êtes pas dans la whitelist !`);
+        return interaction.reply({ content: "❌ Vous n'êtes pas dans la whitelist.", ephemeral: true });
+      }
+
+      await member.roles.add(ROLE_TEMP).catch(() => {});
+      setTimeout(() => member.roles.remove(ROLE_TEMP).catch(() => {}), 11000);
+
+      const msg = script.publicMessage.replace("{user}", `<@${interaction.user.id}>`);
+      const sent = await guild.channels.cache.get(SCRIPT_CHANNEL)?.send(msg);
+      setTimeout(() => sent?.delete().catch(() => {}), 5000);
+
+      const resultEmbed = new EmbedBuilder()
+        .setTitle(`📦 ${script.name}`)
+        .setDescription(`ID : 1457770140023132386\n\nvoici ton script tu peux l'enoyer ici avec le truc a copier en bas :\n\n\`\`\`${script.result}\`\`\``)
+        .setColor(0x2ECC71)
+        .setFooter({ text: "Ce message s'auto-détruira dans 5 secondes." });
+
+      await interaction.reply({ embeds: [resultEmbed], ephemeral: true });
+      setTimeout(() => interaction.deleteReply().catch(() => {}), 5000);
+
+      logAction(interaction.user.id, script.name, "✅ Click");
+    } catch (err) {
+      console.error('Erreur activation:', err);
+      return interaction.reply({ content: "Erreur lors de l'activation.", ephemeral: true });
     }
-
-    await member.roles.add(ROLE_TEMP).catch(() => {});
-    setTimeout(() => member.roles.remove(ROLE_TEMP).catch(() => {}), 11000);
-
-    const msg = script.publicMessage.replace("{user}", `<@${interaction.user.id}>`);
-    const sent = await guild.channels.cache.get(SCRIPT_CHANNEL)?.send(msg);
-    setTimeout(() => sent?.delete().catch(() => {}), 5000);
-
-    const resultEmbed = new EmbedBuilder()
-      .setTitle(`📦 ${script.name}`)
-      .setDescription(`ID : 1457770140023132386\n\nvoici ton script tu peux l'enoyer ici avec le truc a copier en bas :\n\n\`\`\`${script.result}\`\`\``)
-      .setColor(0x2ECC71)
-      .setFooter({ text: "Ce message s'auto-détruira dans 5 secondes." });
-
-    await interaction.reply({ embeds: [resultEmbed], ephemeral: true });
-    setTimeout(() => interaction.deleteReply().catch(() => {}), 5000);
-
-    logAction(interaction.user.id, script.name, "✅ Click");
   }
 
   // ---- MODALS & BUTTONS ----
@@ -246,11 +251,16 @@ client.on("interactionCreate", async interaction => {
         const id = input.replace(/[<@!>]/g, "");
         targetUser = await client.users.fetch(id).catch(() => null);
       } else {
-        const members = await guild.members.fetch();
-        targetUser = members.find(m => 
-          m.user.username.toLowerCase() === input.toLowerCase() || 
-          m.displayName.toLowerCase() === input.toLowerCase()
-        )?.user;
+        try {
+          const members = await guild.members.fetch();
+          targetUser = members.find(m => 
+            m.user.username.toLowerCase() === input.toLowerCase() || 
+            m.displayName.toLowerCase() === input.toLowerCase()
+          )?.user;
+        } catch (err) {
+          console.error('Erreur fetch members:', err);
+          return interaction.reply({ content: "Erreur: Impossible de rechercher les membres.", ephemeral: true });
+        }
       }
 
       if (!targetUser) return interaction.reply({ content: "❌ Utilisateur introuvable.", ephemeral: true });
@@ -269,11 +279,16 @@ client.on("interactionCreate", async interaction => {
       
       let targetUserId = input.replace(/[<@!>]/g, "");
       if (!targetUserId.match(/^\d+$/)) {
-        const members = await guild.members.fetch();
-        targetUserId = members.find(m => 
-          m.user.username.toLowerCase() === input.toLowerCase() || 
-          m.displayName.toLowerCase() === input.toLowerCase()
-        )?.id;
+        try {
+          const members = await guild.members.fetch();
+          targetUserId = members.find(m => 
+            m.user.username.toLowerCase() === input.toLowerCase() || 
+            m.displayName.toLowerCase() === input.toLowerCase()
+          )?.id;
+        } catch (err) {
+          console.error('Erreur fetch members:', err);
+          return interaction.reply({ content: "Erreur: Impossible de rechercher les membres.", ephemeral: true });
+        }
       }
 
       if (!targetUserId) return interaction.reply({ content: "❌ Utilisateur introuvable.", ephemeral: true });
