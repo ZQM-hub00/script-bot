@@ -2,52 +2,128 @@
   "scripts": [
     {
       "id": "script1",
-      "name": "Script 1",
+      "name": "🔮 | Nameless Hub",
       "status": "🟢",
-      "whitelist": [],
-      "result": "CONTENU DU SCRIPT 1",
+      "whitelist": [
+        "1078658967183573122"
+      ],
+      "result": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/ily123950/Vulkan/refs/heads/main/Tr\"))()",
       "publicMessage": "{user} bienvenue, voici ton script."
     },
     {
       "id": "script2",
-      "name": "Script 2",
+      "name": "🛑 | Auto Block",
       "status": "🟢",
       "whitelist": [],
-      "result": "CONTENU DU SCRIPT 2",
+      "result": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/sabscripts063-cloud/Kdml-Not-Me/refs/heads/main/BlockPlayer\"))()",
       "publicMessage": "{user} bienvenue, voici ton script."
     },
     {
       "id": "script3",
-      "name": "Script 3",
+      "name": "⚙️ | Admin Panel Spammer [ 🔴 XENO ]",
       "status": "🟢",
       "whitelist": [],
-      "result": "CONTENU DU SCRIPT 3",
+      "result": "loadstring(game:HttpGet(\"https://api.luarmor.net/files/v3/loaders/78ac6f1abace5ce6dba1ed4517b4c79f.lua\"))()",
       "publicMessage": "{user} bienvenue, voici ton script."
     },
     {
       "id": "script4",
-      "name": "Script 4",
+      "name": "🍎 | Miranda Hub",
       "status": "🟢",
       "whitelist": [],
-      "result": "CONTENU DU SCRIPT 4",
+      "result": "loadstring(game:HttpGet(\"https://pastefy.app/JJVhs3rK/raw\"))()",
       "publicMessage": "{user} bienvenue, voici ton script."
     },
     {
       "id": "script5",
-      "name": "Script 5",
+      "name": "🗡️ | Cr1mson Hub",
       "status": "🟢",
       "whitelist": [],
-      "result": "CONTENU DU SCRIPT 5",
+      "result": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/Cr1msonFs/Main/refs/heads/main/Main.lua\"))()",
       "publicMessage": "{user} bienvenue, voici ton script."
     },
     {
       "id": "script6",
-      "name": "Script 6",
+      "name": "🤝 | Allow Friends script",
       "status": "🟢",
       "whitelist": [],
-      "result": "CONTENU DU SCRIPT 6",
+      "result": "loadstring(game:HttpGet(\"https://pastebin.com/raw/BEyVk16G\"))()",
       "publicMessage": "{user} bienvenue, voici ton script."
     },
+    {
+      "id": "script7",
+      "name": "🌀 | TP [ V1 ]",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "loadstring(game:HttpGet(\"https://pastebin.com/raw/ttwrdPZS\", true))()",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script8",
+      "name": "🌀 | TP [ V2 ]",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "loadstring(game:HttpGet(\"https://pastebin.com/raw/PYYPDgqw\"))()",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script9",
+      "name": "🍋 | Lemon Hub",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "loadstring(game:HttpGet(\"https://api.luarmor.net/files/v3/loaders/6d08fbf253529a4fefa32ff404bd5448.lua\"))()",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script10",
+      "name": "🎤 | LENNON HUB",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "loadstring(game:HttpGet(\"https://pastefy.app/MJw2J4T6/raw\"))()",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script11",
+      "name": "🏠 | Tp To Base",
+      "status": "Patched",
+      "whitelist": [],
+      "result": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/LucasggkX/LKZ-Hub/refs/heads/main/Instant%20steal.lua\"))()",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script12",
+      "name": "🐯 | Tigy Script",
+      "status": "Patched",
+      "whitelist": [],
+      "result": "loadstring(game:HttpGet(\"https://pastefy.app/NZCKYdm0/raw\"))()",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script13",
+      "name": "🗻 | Kurd Hub",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/Ninja10908/S4/refs/heads/main/Kurdhub\"))()",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script14",
+      "name": "👾 | Ugly script",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "``loadstring(game:HttpGet(\"https://api.luarmor.net/files/v3/loaders/53325754de16c11fbf8bf78101c1c881.lua\"))()``",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    },
+    {
+      "id": "script15",
+      "name": "🔎 | Finder ",
+      "status": "🟢",
+      "whitelist": [],
+      "result": "??"))()",
+      "publicMessage": "{user} bienvenue, voici ton script."
+    }
+  ]
+}
     {
       "id": "script7",
       "name": "Script 7",
