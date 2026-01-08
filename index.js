@@ -40,7 +40,8 @@ const commands = [
   new SlashCommandBuilder().setName("edit").setDescription("Modifier un script"),
   new SlashCommandBuilder().setName("whitelist").setDescription("Voir / modifier la whitelist d'un script"),
   new SlashCommandBuilder().setName("editwhitelist").setDescription("Ajouter ou retirer des utilisateurs de la whitelist"),
-  new SlashCommandBuilder().setName("whitelist_auto").setDescription("Rechercher une personne dans tous les scripts").addUserOption(opt => opt.setName("utilisateur").setDescription("L'utilisateur à rechercher").setRequired(true))
+  new SlashCommandBuilder().setName("whitelist_auto").setDescription("Rechercher une personne dans tous les scripts").addUserOption(opt => opt.setName("utilisateur").setDescription("L'utilisateur à rechercher").setRequired(true)),
+  new SlashCommandBuilder().setName("info").setDescription("Afficher les infos du bot")
 ].map(c => c.toJSON());
 
 const rest = new REST({ version: "10" }).setToken(TOKEN);
@@ -106,8 +107,20 @@ client.on("interactionCreate", async interaction => {
     return interaction.reply({ content: "❌ Seul le propriétaire peut exécuter cette commande.", ephemeral: true });
   }
 
+  // ---- /info ----
+  if (interaction.isChatInputCommand() && interaction.commandName === "info") {
+    const totalScripts = data.scripts.length;
+    const activeScripts = data.scripts.filter(s => s.status === "🟢").length;
+    const totalWhitelisted = data.scripts.reduce((sum, s) => sum + s.whitelist.length, 0);
+    const embed = new EmbedBuilder()
+      .setTitle("🤖 Infos du Bot")
+      .setDescription(`**Scripts totaux :** ${totalScripts}\n**Scripts actifs :** ${activeScripts}\n**Utilisateurs whitelistés :** ${totalWhitelisted}\n**Serveur :** ${guild.name}`)
+      .setColor(0x3498DB)
+      .setTimestamp();
+    return interaction.reply({ embeds: [embed], ephemeral: true });
+  }
+
   // ---- /activate ----
-  if (interaction.isChatInputCommand() && interaction.commandName === "activate") {
     const menu = buildScriptMenu(true);
     return interaction.reply({
       embeds: [new EmbedBuilder().setTitle("📜 Menu Scripts").setDescription("Sélectionne un script ci-dessous.").setColor(0x5865F2)],
@@ -226,7 +239,6 @@ client.on("interactionCreate", async interaction => {
         targetUser = await client.users.fetch(id).catch(() => null);
       } else {
         const members = await guild.members.fetch();
-        targetUser = await guild.members.fetch();
         targetUser = members.find(m => 
           m.user.username.toLowerCase() === input.toLowerCase() || 
           m.displayName.toLowerCase() === input.toLowerCase()

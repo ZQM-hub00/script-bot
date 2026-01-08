@@ -31,5 +31,6 @@ Un bot Discord pour gérer et distribuer des scripts via des commandes slash. Pe
 - `/whitelist` : Voir la whitelist d'un script.
 - `/editwhitelist` : Ajouter/retirer des utilisateurs de la whitelist (propriétaire seulement).
 - `/whitelist_auto <utilisateur>` : Rechercher un utilisateur dans toutes les whitelists (propriétaire seulement).
+- `/info` : Afficher les statistiques du bot (nombre de scripts, etc.).
 
 Le bot génère automatiquement 15 scripts vides au premier lancement.
