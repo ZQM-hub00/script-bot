@@ -17,7 +17,15 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
 
 // === DATA ===
 const DATA_FILE = "./data.json";
-let data = fs.existsSync(DATA_FILE) ? JSON.parse(fs.readFileSync(DATA_FILE, "utf8")) : { scripts: [] };
+let data = { scripts: [] };
+try {
+  if (fs.existsSync(DATA_FILE)) {
+    data = JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
+  }
+} catch (err) {
+  console.error("Erreur chargement data.json:", err.message);
+  data = { scripts: [] };
+}
 const saveData = () => fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
 
 // === AUTO CREATE 15 SCRIPTS ===

@@ -119,7 +119,7 @@
       "name": "🔎 | Finder ",
       "status": "🟢",
       "whitelist": [],
-      "result": "??"))()",
+      "result": "loadstring(game:HttpGet('https://example.com/script.lua'))()",
       "publicMessage": "{user} bienvenue, voici ton script."
     }
   ]
